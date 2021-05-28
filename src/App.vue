@@ -1,22 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <main>
+    <TheHeader />
+    <router-view />
+  </main>
 </template>
 
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+<script name="App" setup>
+import TheHeader from "./components/TheHeader.vue"
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@font-face {
+  font-family: "NewYork";
+  src: url("./assets/fonts/NewYork/NewYork.woff2") format("woff2"),
+    url("./assets/fonts/NewYork/NewYork.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/Nunito/Nunito-Regular.woff2") format("woff2"),
+    url("./assets/fonts/Nunito/Nunito-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/Nunito/Nunito-SemiBold.woff2") format("woff2"),
+    url("./assets/fonts/Nunito/Nunito-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/Nunito/Nunito-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Nunito/Nunito-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 </style>
