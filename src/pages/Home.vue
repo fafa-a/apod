@@ -1,6 +1,6 @@
 <template>
   <TheSection />
 </template>
-<script name="Home" setup>
+<script setup>
 import TheSection from "../components/TheSection.vue"
 </script>

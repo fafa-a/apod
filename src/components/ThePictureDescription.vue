@@ -9,13 +9,13 @@
     font="body"
   >
     <h2 text="h3 lg:h2">
-      {{ title }}
+      {{ data.title }}
     </h2>
     <span m="t-2rem">{{ today }}</span>
     <p m="t-1.5rem">
-      {{ description }}
+      {{ data.explanation }}
     </p>
-    <p m="t-1.5rem" text="sm">Image Credit & Copyright: {{ copyright }}</p>
+    <p m="t-1.5rem" text="sm">Image Credit & Copyright: {{ data.copyright }}</p>
     <p text="sm">
       Authors & editors:<a
         href="https://www.mtu.edu/physics/department/faculty/nemiroff/"
@@ -46,9 +46,10 @@
 <script name="ThePictureDescription" setup>
 import { defineProps } from "vue"
 
-defineProps({
+const props = defineProps({
   data: {
     type: Object,
+    required: true,
   },
 })
 
@@ -66,7 +67,7 @@ const month = [
   "November",
   "December",
 ]
-
+const date = props.data.date
 const formatDate = (date) => {
   const year = date.substring(0, 4)
   const monthNumber = date.substring(5, 7)

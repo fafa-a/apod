@@ -10,6 +10,4 @@
     <TheNavbar />
   </span>
 </template>
-<script name="Home" setup>
-import TheNavbar from "../components/TheNavbar.vue"
-</script>
+<script lang="js" name="Home" setup></script>

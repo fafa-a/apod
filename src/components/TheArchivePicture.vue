@@ -21,7 +21,7 @@
   </picture>
 </template>
 <script name="TheArchivePicture" setup>
-import { defineProps } from "@vue/runtime-core"
+// import { defineProps } from "@vue/runtime-core"
 // import { useAxios } from "@vue-composable/axios"
 // const { exec, data } = useAxios()
 
