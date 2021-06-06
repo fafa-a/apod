@@ -21,7 +21,7 @@
 .lineHover::before {
   bottom: 0;
   content: "";
-  height: 1px;
+  height: 2px;
   width: 100%;
   position: absolute;
   background: #222;
