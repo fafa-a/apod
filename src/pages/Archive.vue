@@ -4,8 +4,8 @@
       Last 31 days
     </h1>
 
-    <div container="~" flex="~ row" m="x-auto t-4">
-      <div v-if="loading" m="x-auto" >
+    <div container="~" flex="~ row" m="x-auto t-8">
+      <div v-if="loading" m="x-auto">
         <loader />
       </div>
       <div v-else flex="~ wrap" justify="between">
