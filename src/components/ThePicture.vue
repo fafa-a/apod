@@ -1,23 +1,56 @@
 <template>
   <picture>
-    <a :href="data.hdurl" h="auto lg:87vh" flex="~">
-      <img
-        :src="data.media.url"
-        :alt="data.title"
-        max-h="full"
-        height="70vh"
-        m="x-auto xl:y-auto"
-      />
-    </a>
+    <span v-if="type == 'video'" h="auto lg:87vh" flex="~" place="items-center">
+      <iframe
+        width="960"
+        height="540"
+        :src="url"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </span>
+    <span v-else>
+      <a :href="hdurl" h="auto lg:87vh" flex="~">
+        <img
+          :src="url"
+          :alt="title"
+          max-h="full"
+          height="70vh"
+          m="x-auto xl:y-auto"
+        />
+      </a>
+    </span>
   </picture>
 </template>
 <script name="ThePicture" setup>
 import { defineProps } from "@vue/runtime-core"
+import { useRoute } from "vue-router"
+const route = useRoute()
+ref: hdurl = ""
+ref: url = ""
+ref: title = ""
+ref: type = ""
 
-defineProps({
+const props = defineProps({
   data: {
     type: Object,
     required: true,
   },
 })
+
+if (route.name === "ArchiveSearch") {
+  hdurl = props.data.hdurl
+  url = props.data.url
+  title = props.data.title
+  type = props.data.type
+} else if (props.data.id) {
+  hdurl = props.data.media.hdurl
+  url = props.data.media.url
+  type = props.data.type
+} else {
+  hdurl = props.data.hdurl
+  url = props.data.url
+  type = props.data.type
+}
 </script>

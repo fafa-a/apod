@@ -1,49 +1,52 @@
 <template>
   <div h="screen">
-    <h1>Archive</h1>
+    <h1 font="display" text="h3" m="x-1rem md:x-2rem lg:x-3rem">
+      Last 31 days
+    </h1>
 
-    <!-- <div container="~" flex="~ row" m="x-auto" justify="center">
-      <div v-if="loading">Loading...</div>
-      <ul v-else>
-        <listItems
-          v-for="item of data"
+    <div container="~" flex="~ row" m="x-auto t-4">
+      <div v-if="loading" m="x-auto" >
+        <loader />
+      </div>
+      <div v-else flex="~ wrap" justify="between">
+        <cardArchive
+          v-for="item of data.reverse()"
           :key="item.index"
           :item="item"
-          @is-hovered="showImg"
         />
-      </ul>
-      <span m="x-auto">
-        <TheArchivePicture :dataSearch="imgState" />
-      </span>
-    </div> -->
+      </div>
+    </div>
   </div>
 </template>
 <script name="Archive" setup>
-import listItems from "../components/listItems.vue"
-import TheArchivePicture from "../components/TheArchivePicture.vue"
+import cardArchive from "../components/cardArchive.vue"
+import loader from "../components/loader.vue"
+import { useAxios } from "@vue-composable/axios"
 
-// ref: startDate = "2021-05-15"
-// ref: endDate = "2021-05-18"
-// ref: imgState = {}
+const [month, date, year] = new Date().toLocaleDateString("fr-FR").split("/")
+const today = `${year + "-" + date + "-" + month}`
+const lastMonth = month - 1
+const last31Days = `${year + "-" + lastMonth + "-" + date}`
 
-// const { exec, data, loading } = useAxios()
+ref: startDate = last31Days
+ref: endDate = today
+today
+ref: imgState = {}
 
-// try {
-//   exec({
-//     method: "GET",
-//     url:
-//       import.meta.env.VITE_NASA_BASE_URL +
-//       "&start_date=" +
-//       startDate +
-//       "&end_date=" +
-//       endDate,
-//   })
-// } catch (error) {
-//   console.error(error)
-// }
+const { exec, data, loading } = useAxios()
 
-// const showImg = (isHovered, props) => {
-//   imgState = { isHovered, props }
-// }
+try {
+  exec({
+    method: "GET",
+    url:
+      import.meta.env.VITE_NASA_BASE_URL +
+      "&start_date=" +
+      startDate +
+      "&end_date=" +
+      endDate,
+  })
+} catch (error) {
+  console.error(error)
+}
 </script>
 <style></style>

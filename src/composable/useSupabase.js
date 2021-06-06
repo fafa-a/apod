@@ -14,4 +14,5 @@ const picsOftheDay = async () => {
     .eq("date", today)
   return { apod, error }
 }
+
 export { picsOftheDay }

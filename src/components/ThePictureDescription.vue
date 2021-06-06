@@ -9,13 +9,13 @@
     font="body"
   >
     <h2 text="h3 lg:h2">
-      {{ data.title }}
+      {{ title }}
     </h2>
     <span m="t-2rem">{{ today }}</span>
     <p m="t-1.5rem">
-      {{ data.explanation }}
+      {{ explanation }}
     </p>
-    <p m="t-1.5rem" text="sm">Image Credit & Copyright: {{ data.copyright }}</p>
+    <p m="t-1.5rem" text="sm">Image Credit & Copyright: {{ copyright }}</p>
     <p text="sm">
       Authors & editors:<a
         href="https://www.mtu.edu/physics/department/faculty/nemiroff/"
@@ -45,6 +45,11 @@
 </template>
 <script name="ThePictureDescription" setup>
 import { defineProps } from "vue"
+import { useRoute } from "vue-router"
+const route = useRoute()
+ref: title = ""
+ref: explanation = ""
+ref: copyright = ""
 
 const props = defineProps({
   data: {
@@ -52,6 +57,10 @@ const props = defineProps({
     required: true,
   },
 })
+
+title = props.data.title
+explanation = props.data.explanation
+copyright = props.data.copyright
 
 const month = [
   "January",
