@@ -18,7 +18,7 @@
       h="420px"
       flex="~ col"
       border="solid 1px light-700 rounded-xl"
-      m="b-4"
+      m="b-4 x-auto"
     >
       <span v-if="item.media_type == 'video'">
         <img

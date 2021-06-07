@@ -1,5 +1,10 @@
 <template>
-  <nav text="uppercase md lg:lg" tracking="0.2em" flex="~ row" font="display">
+  <nav
+    text="uppercase md lg:lg"
+    tracking="0.2em"
+    flex="~ col md:row"
+    font="display"
+  >
     <router-link
       :to="{ path: '/archive' }"
       m="r-5"

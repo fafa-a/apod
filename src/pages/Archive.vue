@@ -7,7 +7,7 @@
       <div v-if="loading" m="x-auto">
         <loader />
       </div>
-      <div v-else flex="~ wrap" justify="between">
+      <div v-else flex="~ wrap" justify="center md:evenly">
         <cardArchive v-for="item of dataNasa" :key="item.index" :item="item" />
       </div>
     </div>

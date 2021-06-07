@@ -1,5 +1,5 @@
 <template>
-  <span
+  <div
     flex="~ col"
     justify="center"
     align="items-center"
@@ -8,6 +8,8 @@
     text="light-50"
   >
     <TheNavbar />
-  </span>
+  </div>
 </template>
-<script lang="js" name="Home" setup></script>
+<script name="Home" setup>
+import TheNavbar from "../components/TheNavbar.vue"
+</script>
