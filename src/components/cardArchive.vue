@@ -53,7 +53,7 @@ ref: hdURL = ""
 ref: videoURL = ""
 
 if (video && props.item.id) {
-  videoURL = props.item.media.url
+  videoURL = props.item.media.urlEmbed
   Url = props.item.media.url
 } else if (video) {
   const itemURL = new URL(props.item.url)
