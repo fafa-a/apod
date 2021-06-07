@@ -1,5 +1,5 @@
 <template>
-  <div bg="red-500" h="screen">
+  <div h="screen">
     <h1>Categories</h1>
   </div>
 </template>
