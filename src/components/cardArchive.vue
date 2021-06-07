@@ -22,7 +22,7 @@
     >
       <span v-if="item.media_type == 'video'">
         <img
-          :src="'https://i.ytimg.com/vi/' + videoURL + '/mqdefault.jpg'"
+          :src="'https://i.ytimg.com/vi/' + videoURL + '/hqdefault.jpg'"
           alt="item.title"
           w="full"
           h="300px"
