@@ -4,8 +4,8 @@ const supabaseUrl = "https://pkonpcjzjjefublfunli.supabase.co"
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-const [month, date, year] = new Date().toLocaleDateString("fr-FR").split("/")
-const today = `${year + "/" + date + "/" + month}`
+const [date, month, year] = new Date().toLocaleDateString("fr-FR").split("/")
+const today = `${year + "-" + month + "-" + date}`
 
 const picsOftheDay = async () => {
   let { data: apod, error } = await supabase
@@ -14,5 +14,13 @@ const picsOftheDay = async () => {
     .eq("date", today)
   return { apod, error }
 }
+const picsOfLast31Days = async (arg) => {
+  let { data: apod, error } = await supabase
+    .from("apod")
+    .select("*")
+    .gt("date", arg)
+    .order("date", { ascending: false })
 
-export { picsOftheDay }
+  return { apod, error }
+}
+export { picsOftheDay, picsOfLast31Days }

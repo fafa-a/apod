@@ -5,8 +5,8 @@
       query: {
         title: item.title,
         date: item.date,
-        url: item.url,
-        hdurl: item.hdurl,
+        url: Url,
+        hdurl: hdURL,
         explanation: item.explanation,
         copyright: item.copyright,
         type: item.media_type,
@@ -22,9 +22,7 @@
     >
       <img
         :src="
-          video
-            ? 'https://i.ytimg.com/vi/' + videoURL + '/hqdefault.jpg'
-            : item.url
+          video ? 'https://i.ytimg.com/vi/' + videoURL + '/hqdefault.jpg' : Url
         "
         alt="item.title"
         w="full"
@@ -48,9 +46,27 @@ import { defineProps } from "@vue/runtime-core"
 import rightArrow from "./rightArrow.vue"
 
 const slug = props.item.title.replaceAll(" ", "_")
-const itemURL = new URL(props.item.url)
-const videoURL = itemURL.pathname.slice(7)
 const video = props.item.media_type == "video"
+const image = props.item.media_type == "image"
+ref: Url = ""
+ref: hdURL = ""
+ref: videoURL = ""
+
+if (video && props.item.id) {
+  videoURL = props.item.media.url
+  Url = props.item.media.url
+} else if (video) {
+  const itemURL = new URL(props.item.url)
+  videoURL = itemURL.pathname.slice(7)
+  console.log(videoURL)
+}
+if (image && props.item.id) {
+  Url = props.item.media.url
+  hdURL = props.item.media.hdurl
+} else if (image) {
+  Url = props.item.url
+  hdURL = props.item.hdurl
+}
 
 const props = defineProps({
   item: {

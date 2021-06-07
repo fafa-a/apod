@@ -18,6 +18,7 @@ import cardArchive from "../components/cardArchive.vue"
 import loader from "../components/loader.vue"
 import { onMounted } from "@vue/runtime-dom"
 import { searchNasa } from "../composable/useNasa"
+import { picsOfLast31Days } from "../composable/useSupabase"
 
 const [date, month, year] = new Date().toLocaleDateString("fr-FR").split("/")
 const today = `${year + "-" + month + "-" + date}`
@@ -31,8 +32,12 @@ ref: loading = true
 
 onMounted(async () => {
   try {
-    const { data } = await searchNasa(startDate, endDate)
-    dataNasa = data.reverse()
+    const { apod } = await picsOfLast31Days(last31Days)
+    dataNasa = apod
+    if (apod.length == 0) {
+      const { data } = await searchNasa(startDate, endDate)
+      dataNasa = data.reverse()
+    }
     loading = false
   } catch (error) {
     console.error(error)
