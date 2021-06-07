@@ -10,6 +10,7 @@
 import { useRoute } from "vue-router"
 import ThePicture from "../components/ThePicture.vue"
 import ThePictureDescription from "../components/ThePictureDescription.vue"
+
 const route = useRoute()
 const title = route.query.title
 const date = route.query.date
@@ -20,4 +21,5 @@ const hdurl = route.query.hdurl
 const type = route.query.type
 const dataPicture = { hdurl, url, title, type }
 const dataDescription = { url, title, date, explanation, copyright }
+
 </script>

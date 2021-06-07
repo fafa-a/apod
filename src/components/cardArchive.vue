@@ -53,6 +53,7 @@
 <script name="cardArchive" setup>
 import { defineProps } from "@vue/runtime-core"
 import rightArrow from "./rightArrow.vue"
+
 const slug = props.item.title.replaceAll(" ", "_")
 const itemURL = new URL(props.item.url)
 const videoURL = itemURL.pathname.slice(7)

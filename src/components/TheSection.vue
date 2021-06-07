@@ -16,6 +16,7 @@ import loader from "./loader.vue"
 import { onMounted } from "@vue/runtime-core"
 import { picsOftheDay } from "../composable/useSupabase"
 import { fetchNasa } from "../composable/useNasa"
+
 ref: loading = true
 ref: dataApod = {}
 

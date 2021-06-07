@@ -16,7 +16,6 @@
 <script name="Archive" setup>
 import cardArchive from "../components/cardArchive.vue"
 import loader from "../components/loader.vue"
-import { useAxios } from "@vue-composable/axios"
 import { onMounted } from "@vue/runtime-dom"
 import { searchNasa } from "../composable/useNasa"
 
