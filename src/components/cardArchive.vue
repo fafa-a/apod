@@ -78,6 +78,6 @@ div {
 }
 div:hover {
   filter: none;
-  transition: filter 300ms;
+  transition: filter 400ms;
 }
 </style>
