@@ -7,7 +7,7 @@
       <div v-if="loading" m="x-auto">
         <loader />
       </div>
-      <div v-else flex="~ wrap" justify="center md:evenly">
+      <div v-else grid="~ cols-1 md:cols-7" m="x-auto">
         <cardArchive v-for="item of dataNasa" :key="item.index" :item="item" />
       </div>
     </div>
@@ -34,7 +34,7 @@ onMounted(async () => {
   try {
     const { apod } = await picsOfLast31Days(last31Days)
     dataNasa = apod
-    if (apod.length == 0) {
+    if (apod.length == 0 || apod[0].date !== today) {
       const { data } = await searchNasa(startDate, endDate)
       dataNasa = data.reverse()
     }

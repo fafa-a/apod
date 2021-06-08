@@ -14,11 +14,11 @@
     }"
   >
     <div
-      w="350px"
+      w="full md:200px"
       h="420px"
       flex="~ col"
-      border="solid 1px light-700 rounded-xl"
-      m="b-4 x-auto"
+      border="solid 1px light-700"
+      m="b-2 x-1"
     >
       <img
         :src="
@@ -26,17 +26,16 @@
         "
         alt="item.title"
         w="full"
-        h="300px"
+        h="380px"
         object="cover center"
-        border="rounded-t-xl"
         loading="lazy"
       />
       <div font="body" flex="~ col" m="t-2" p="l-2">
         <p text="cool-gray-400">{{ item.date }}</p>
-        <h2 text="lg cool-gray-800" m="t-1">{{ item.title }}</h2>
+        <!-- <h2 text="lg cool-gray-800" m="t-1">{{ item.title }}</h2>
         <span flex="~ row" justify="end" p="r-2">
           <rightArrow />
-        </span>
+        </span> -->
       </div>
     </div>
   </router-link>
@@ -58,7 +57,6 @@ if (video && props.item.id) {
 } else if (video) {
   const itemURL = new URL(props.item.url)
   videoURL = itemURL.pathname.slice(7)
-  console.log(videoURL)
 }
 if (image && props.item.id) {
   Url = props.item.media.url
@@ -75,4 +73,12 @@ const props = defineProps({
   },
 })
 </script>
-<style></style>
+<style scoped>
+div {
+  filter: grayscale(100%);
+}
+div:hover {
+  filter: none;
+  transition: filter 500ms;
+}
+</style>

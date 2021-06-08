@@ -76,7 +76,7 @@ const month = [
   "November",
   "December",
 ]
-const date = props.data.date
+const { date } = props.data
 const formatDate = (date) => {
   const year = date.substring(0, 4)
   const monthNumber = date.substring(5, 7)
