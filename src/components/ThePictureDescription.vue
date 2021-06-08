@@ -46,6 +46,7 @@
 <script name="ThePictureDescription" setup>
 import { defineProps } from "vue"
 import { useRoute } from "vue-router"
+import { formatDate } from "../utils/formatDate"
 const route = useRoute()
 ref: title = ""
 ref: explanation = ""
@@ -62,28 +63,6 @@ title = props.data.title
 explanation = props.data.explanation
 copyright = props.data.copyright
 
-const month = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-]
 const { date } = props.data
-const formatDate = (date) => {
-  const year = date.substring(0, 4)
-  const monthNumber = date.substring(5, 7)
-  const day = date.substring(8, 10)
-  const index = +monthNumber - 1
-  const monthLetter = month[index]
-  return `${monthLetter + " " + day + ", " + year}`
-}
 const today = formatDate(date)
 </script>

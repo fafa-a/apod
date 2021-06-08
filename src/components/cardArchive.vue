@@ -30,19 +30,25 @@
         object="cover center"
         loading="lazy"
       />
-      <div font="body" flex="~ col" m="t-2" p="l-2">
-        <p text="cool-gray-400">{{ item.date }}</p>
-        <!-- <h2 text="lg cool-gray-800" m="t-1">{{ item.title }}</h2>
-        <span flex="~ row" justify="end" p="r-2">
-          <rightArrow />
-        </span> -->
-      </div>
+      <p font="body" text="cool-gray-400" m="y-auto l-2">
+        {{ itemDate }}
+      </p>
     </div>
   </router-link>
 </template>
 <script name="cardArchive" setup>
 import { defineProps } from "@vue/runtime-core"
 import rightArrow from "./rightArrow.vue"
+import { formatDate } from "../utils/formatDate"
+
+const props = defineProps({
+  item: {
+    type: Object,
+    required: true,
+  },
+})
+const { date } = props.item
+const itemDate = formatDate(date)
 
 const slug = props.item.title.replaceAll(" ", "_")
 const video = props.item.media_type == "video"
@@ -65,13 +71,6 @@ if (image && props.item.id) {
   Url = props.item.url
   hdURL = props.item.hdurl
 }
-
-const props = defineProps({
-  item: {
-    type: Object,
-    required: true,
-  },
-})
 </script>
 <style scoped>
 div {
@@ -79,6 +78,6 @@ div {
 }
 div:hover {
   filter: none;
-  transition: filter 500ms;
+  transition: filter 300ms;
 }
 </style>

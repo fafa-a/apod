@@ -7,7 +7,7 @@
       <div v-if="loading" m="x-auto">
         <loader />
       </div>
-      <div v-else grid="~ cols-1 md:cols-7" m="x-auto">
+      <div v-else grid="~ cols-1 md:cols-3 lg:cols-4 xl:cols-7" m="x-auto">
         <cardArchive v-for="item of dataNasa" :key="item.index" :item="item" />
       </div>
     </div>

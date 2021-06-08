@@ -5,14 +5,10 @@
     flex="~ col md:row"
     font="display"
   >
-    <router-link
-      :to="{ path: '/archive' }"
-      m="r-5"
-      class="lineHover"
-      duration="300"
+    <router-link :to="{ path: '/archive' }" m="r-5" class="lineHover"
       >archive</router-link
     >
-    <router-link :to="{ path: '/categories' }" class="lineHover" duration="300"
+    <router-link :to="{ path: '/categories' }" class="lineHover"
       >categories</router-link
     >
   </nav>

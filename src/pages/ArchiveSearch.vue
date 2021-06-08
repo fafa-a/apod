@@ -1,6 +1,6 @@
 <template>
   <section container="~" m="x-auto">
-    <article flex="~ col xl:row">
+    <article flex="~ col xl:row" justify="center">
       <ThePicture :data="dataPicture" />
       <ThePictureDescription :data="dataDescription" />
     </article>
@@ -21,5 +21,4 @@ const hdurl = route.query.hdurl
 const type = route.query.type
 const dataPicture = { hdurl, url, title, type }
 const dataDescription = { url, title, date, explanation, copyright }
-
 </script>
