@@ -13,7 +13,7 @@
     </div>
   </div>
 </template>
-<script name="Archive" setup>
+<script name="Last31Days" setup>
 import cardArchive from "../components/cardArchive.vue"
 import loader from "../components/loader.vue"
 import { onMounted } from "@vue/runtime-dom"

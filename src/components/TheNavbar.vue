@@ -6,8 +6,8 @@
     font="display"
     items="center"
   >
-    <router-link :to="{ path: '/archive' }" m="r-5" class="lineHover"
-      >archive</router-link
+    <router-link :to="{ path: '/last-31-days' }" m="r-5" class="lineHover"
+      >last 31 days</router-link
     >
     <router-link
       :to="{ path: '/categories' }"
@@ -33,14 +33,15 @@
   width: 100%;
   position: absolute;
   background: #222;
-  transform-origin: 0 0;
-  transform: scaleX(1);
+  transform-origin: 100% 0;
+  transform: scaleX(0);
   transition: transform 400ms;
 }
 .lineHover:hover::before {
-  transform-origin: 100% 0;
-  transform: scaleX(0);
+  transform-origin: 0 0;
+  transform: scaleX(1);
 }
+
 .fill {
   position: relative;
 }
@@ -52,9 +53,9 @@
   width: 100%;
   position: absolute;
   background: #222;
+  transition: transform 400ms;
   transform-origin: 100% 0;
   transform: scaleX(0);
-  transition: transform 400ms;
 }
 .fill:hover::before {
   transform-origin: 0 0;

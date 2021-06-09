@@ -1,6 +1,6 @@
 import Home from "../pages/Home.vue"
 import Categories from "../pages/Categories.vue"
-import Archive from "../pages/Archive.vue"
+import Last31Days from "../pages/Last31Days.vue"
 import MenuMobile from "../pages/MenuMobile.vue"
 import ArchiveSearch from "../pages/ArchiveSearch.vue"
 
@@ -19,9 +19,9 @@ const routes = [
     component: Categories,
   },
   {
-    path: "/archive",
-    name: "Archive",
-    component: Archive,
+    path: "/last-31-days",
+    name: "Last31Days",
+    component: Last31Days,
   },
   {
     path: "/ArchiveSearch/:id",
