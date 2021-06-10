@@ -2,7 +2,7 @@ import Home from "../pages/Home.vue"
 import Categories from "../pages/Categories.vue"
 import Last31Days from "../pages/Last31Days.vue"
 import MenuMobile from "../pages/MenuMobile.vue"
-import ArchiveSearch from "../pages/ArchiveSearch.vue"
+import TheDay from "../pages/TheDay.vue"
 
 import { createRouter, createWebHistory } from "vue-router"
 
@@ -24,9 +24,9 @@ const routes = [
     component: Last31Days,
   },
   {
-    path: "/ArchiveSearch/:id",
-    name: "ArchiveSearch",
-    component: ArchiveSearch,
+    path: "/the-day/:id",
+    name: "TheDay",
+    component: TheDay,
     props(route) {
       return { search: route.query.search }
     },

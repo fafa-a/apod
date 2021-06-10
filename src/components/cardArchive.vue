@@ -1,16 +1,7 @@
 <template>
   <router-link
     :to="{
-      path: '/ArchiveSearch/' + slug,
-      query: {
-        title: item.title,
-        date: item.date,
-        url: Url,
-        hdurl: hdURL,
-        explanation: item.explanation,
-        copyright: item.copyright,
-        type: item.media_type,
-      },
+      path: '/the-day/' + slug,
     }"
   >
     <div
@@ -47,6 +38,7 @@ const props = defineProps({
     required: true,
   },
 })
+
 const { date } = props.item
 const itemDate = formatDate(date)
 

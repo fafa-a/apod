@@ -1,6 +1,6 @@
 <template>
   <picture>
-    <span v-if="type == 'video'" h="auto lg:87vh" flex="~" place="items-center">
+    <span v-if="type == 'video'" h="auto" flex="~" place="items-center">
       <iframe
         width="960"
         height="540"
@@ -26,6 +26,7 @@
 <script name="ThePicture" setup>
 import { defineProps } from "@vue/runtime-core"
 import { useRoute } from "vue-router"
+
 const route = useRoute()
 ref: hdurl = ""
 ref: url = ""
@@ -39,7 +40,7 @@ const props = defineProps({
   },
 })
 
-if (route.name === "ArchiveSearch") {
+if (route.name === "the-day") {
   hdurl = props.data.hdurl
   url = props.data.url
   title = props.data.title

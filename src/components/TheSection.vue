@@ -1,5 +1,5 @@
 <template>
-  <section container="~" m="x-auto">
+  <section container="~" m="x-auto" h="83vh">
     <div v-if="loading" m="x-auto">
       <loader />
     </div>

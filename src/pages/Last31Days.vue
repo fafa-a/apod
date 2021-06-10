@@ -19,6 +19,7 @@ import loader from "../components/loader.vue"
 import { onMounted } from "@vue/runtime-dom"
 import { searchNasa } from "../composable/useNasa"
 import { picsOfLast31Days } from "../composable/useSupabase"
+import { useSessionStorage } from "vue-composable"
 
 const [date, month, year] = new Date().toLocaleDateString("fr-FR").split("/")
 const today = `${year + "-" + month + "-" + date}`
@@ -38,6 +39,7 @@ onMounted(async () => {
       const { data } = await searchNasa(startDate, endDate)
       dataNasa = data.reverse()
     }
+    useSessionStorage("data", dataNasa)
     loading = false
   } catch (error) {
     console.error(error)
