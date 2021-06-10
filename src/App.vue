@@ -2,11 +2,13 @@
   <main>
     <TheHeader />
     <router-view />
+    <TheFooter />
   </main>
 </template>
 
 <script name="App" setup>
 import TheHeader from "./components/TheHeader.vue"
+import TheFooter from "./components/TheFooter.vue"
 </script>
 <style>
 @font-face {

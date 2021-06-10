@@ -47,6 +47,7 @@
 import { defineProps } from "vue"
 import { useRoute } from "vue-router"
 import { formatDate } from "../utils/formatDate"
+
 const route = useRoute()
 ref: title = ""
 ref: explanation = ""
