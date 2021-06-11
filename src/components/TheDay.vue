@@ -1,5 +1,5 @@
 <template>
-  <article flex="~ col xl:row" justify="center">
+  <article flex="~ col xl:row" justify="center" align="xl:items-center">
     <ThePicture :data="data" />
     <ThePictureDescription :data="data" />
   </article>

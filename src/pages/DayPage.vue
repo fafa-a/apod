@@ -1,5 +1,5 @@
 <template>
-  <section container="~" m="x-auto" h="83vh">
+  <section container="~" m="x-auto" h="lg:83vh">
     <TheDay />
   </section>
 </template>

@@ -2,7 +2,7 @@
   <div v-if="loading" m="x-auto">
     <loader />
   </div>
-  <article v-else flex="~ col xl:row" justify="center ">
+  <article v-else flex="~ col lg:row" justify="center" align="lg:items-center">
     <ThePicture :data="dataApod[0]" />
     <ThePictureDescription :data="dataApod[0]" />
   </article>

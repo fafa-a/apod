@@ -1,8 +1,8 @@
 <template>
-  <section container="~" m="x-auto" h="xl:83vh">
+  <section container="~" m="x-auto" h="lg:83vh">
     <TheSection />
   </section>
 </template>
-<script setup>
+<script name="Home" setup>
 import TheSection from "../components/TheSection.vue"
 </script>

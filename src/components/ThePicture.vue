@@ -1,6 +1,6 @@
 <template>
   <picture>
-    <span v-if="type == 'video'" h="auto" flex="~" place="items-center">
+    <span v-if="type == 'video'" h="auto" flex="~">
       <iframe
         width="960"
         height="540"
@@ -11,7 +11,7 @@
       ></iframe>
     </span>
     <span v-else>
-      <a :href="hdurl" h="auto lg:87vh" flex="~">
+      <a :href="hdurl" h="auto xl:82vh" flex="~">
         <img
           :src="url"
           :alt="title"

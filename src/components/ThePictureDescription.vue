@@ -2,8 +2,9 @@
   <div
     flex="~ col"
     w="xl:35vw"
-    max-h="lg:1/3"
-    m="b-2rem t-2rem sm:x-3rem xl:x-0 xl:t-0 xl:y-auto "
+    h="max-content"
+    class="height-fit-content"
+    m="b-2rem t-2rem sm:x-3rem xl:x-0"
     border="xl:solid 1px light-700"
     p="x-1rem xl:y-3rem xl:x-3rem"
     font="body"
