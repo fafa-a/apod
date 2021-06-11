@@ -84,6 +84,5 @@ const today = formatDate(date)
 }
 .right-arrow:hover::after {
   visibility: visible;
-  color: red;
 }
 </style>

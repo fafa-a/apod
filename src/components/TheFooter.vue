@@ -6,16 +6,16 @@
       flex="~ col md:row"
       justify="md:between"
       h="full"
-      m="y-1rem md:x-3rem lg:y-0"
+      m="y-2rem md:x-3rem lg:y-0"
       p="x-1rem"
-      align="md:items-center"
+      align="md:items-center "
     >
       <div flex="~ col">
         <a
           href="https://api.nasa.gov/"
           target="_blank"
           rel="noopener"
-          class="lg:right-arrow-nasa hover:text-cool-gray-400"
+          class="right-arrow-nasa hover:text-cool-gray-400"
           flex="~ row"
           align="items-center"
           >nasa api
@@ -25,7 +25,7 @@
           href="https://www.nasa.gov/"
           target="_blank"
           rel="noopener"
-          class="lg:right-arrow-nasa hover:text-cool-gray-400"
+          class="right-arrow-nasa hover:text-cool-gray-400"
           flex="~ row"
           align="items-center"
           >nasa website</a
@@ -36,7 +36,7 @@
           href="https://github.com/fafa-a"
           target="_blank"
           rel="noopener"
-          class="lg:right-arrow hover:text-cool-gray-400"
+          class="right-arrow hover:text-cool-gray-400"
           flex="~ row"
           align="items-center"
           >github</a
@@ -45,7 +45,7 @@
           href="https://twitter.com/FabienPuech"
           target="_blank"
           rel="noopener"
-          class="lg:right-arrow hover:text-cool-gray-400"
+          class="right-arrow hover:text-cool-gray-400"
           flex="~ row"
           align="items-center"
           >twitter</a
@@ -65,7 +65,6 @@
 }
 .right-arrow-nasa:hover::after {
   visibility: visible;
-  color: red;
 }
 .right-arrow::before {
   content: "";
@@ -76,6 +75,5 @@
 }
 .right-arrow:hover::before {
   visibility: visible;
-  color: red;
 }
 </style>
