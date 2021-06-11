@@ -1,20 +1,21 @@
 <template>
-  <footer h="5vh">
+  <footer h="lg:5vh">
     <nav
       font="body"
       text="uppercase xs cool-gray-300"
-      flex="~ row"
-      justify="between"
+      flex="~ col md:row"
+      justify="md:between"
       h="full"
-      m="x-3rem"
-      align="items-center"
+      m="y-1rem md:x-3rem lg:y-0"
+      p="x-1rem"
+      align="md:items-center"
     >
       <div flex="~ col">
         <a
           href="https://api.nasa.gov/"
           target="_blank"
           rel="noopener"
-          class="right-arrow-nasa hover:text-cool-gray-400"
+          class="lg:right-arrow-nasa hover:text-cool-gray-400"
           flex="~ row"
           align="items-center"
           >nasa api
@@ -24,7 +25,7 @@
           href="https://www.nasa.gov/"
           target="_blank"
           rel="noopener"
-          class="right-arrow-nasa hover:text-cool-gray-400"
+          class="lg:right-arrow-nasa hover:text-cool-gray-400"
           flex="~ row"
           align="items-center"
           >nasa website</a
@@ -35,7 +36,7 @@
           href="https://github.com/fafa-a"
           target="_blank"
           rel="noopener"
-          class="right-arrow hover:text-cool-gray-400"
+          class="lg:right-arrow hover:text-cool-gray-400"
           flex="~ row"
           align="items-center"
           >github</a
@@ -44,7 +45,7 @@
           href="https://twitter.com/FabienPuech"
           target="_blank"
           rel="noopener"
-          class="right-arrow hover:text-cool-gray-400"
+          class="lg:right-arrow hover:text-cool-gray-400"
           flex="~ row"
           align="items-center"
           >twitter</a

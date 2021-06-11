@@ -1,8 +1,8 @@
 import Home from "../pages/Home.vue"
 import Categories from "../pages/Categories.vue"
-import Last31Days from "../pages/Last31Days.vue"
+import Last31Days from "../pages/Last31DaysPage.vue"
 import MenuMobile from "../pages/MenuMobile.vue"
-import TheDay from "../pages/TheDay.vue"
+import TheDay from "../pages/DayPage.vue"
 
 import { createRouter, createWebHistory } from "vue-router"
 

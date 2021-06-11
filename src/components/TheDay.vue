@@ -1,15 +1,13 @@
 <template>
-  <section container="~" m="x-auto">
-    <article flex="~ col xl:row" justify="center">
-      <ThePicture :data="data" />
-      <ThePictureDescription :data="data" />
-    </article>
-  </section>
+  <article flex="~ col xl:row" justify="center">
+    <ThePicture :data="data" />
+    <ThePictureDescription :data="data" />
+  </article>
 </template>
 <script name="TheDay" setup>
 import { useRoute } from "vue-router"
-import ThePicture from "../components/ThePicture.vue"
-import ThePictureDescription from "../components/ThePictureDescription.vue"
+import ThePicture from "./ThePicture.vue"
+import ThePictureDescription from "./ThePictureDescription.vue"
 import { useSessionStorage } from "vue-composable"
 import { computed, watchEffect } from "@vue/runtime-dom"
 ref: index = 0

@@ -1,13 +1,11 @@
 <template>
-  <section container="~" m="x-auto" h="83vh">
-    <div v-if="loading" m="x-auto">
-      <loader />
-    </div>
-    <article v-else flex="~ col xl:row" justify="center ">
-      <ThePicture :data="dataApod[0]" />
-      <ThePictureDescription :data="dataApod[0]" />
-    </article>
-  </section>
+  <div v-if="loading" m="x-auto">
+    <loader />
+  </div>
+  <article v-else flex="~ col xl:row" justify="center ">
+    <ThePicture :data="dataApod[0]" />
+    <ThePictureDescription :data="dataApod[0]" />
+  </article>
 </template>
 <script name="TheSection" setup>
 import ThePicture from "./ThePicture.vue"
