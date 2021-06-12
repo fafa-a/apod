@@ -1,15 +1,17 @@
 <template>
   <picture>
-    <span v-if="type == 'video'" h="auto" flex="~">
+    <span v-if="type == 'video'" h="auto xl:82vh" flex="~" place="items-center">
       <iframe
         width="960"
         height="540"
-        :src="url"
+        src="https://www.youtube.com/embed/eMmw7MqsEUo?rel=0"
         title="YouTube video player"
+        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
     </span>
+
     <span v-else>
       <a :href="hdurl" h="auto xl:82vh" flex="~">
         <img
@@ -44,14 +46,14 @@ if (route.name === "the-day") {
   hdurl = props.data.hdurl
   url = props.data.url
   title = props.data.title
-  type = props.data.type
+  type = props.data.media_type
 } else if (props.data.id) {
   hdurl = props.data.media.hdurl
   url = props.data.media.url
-  type = props.data.type
+  type = props.data.media_type
 } else {
   hdurl = props.data.hdurl
   url = props.data.url
-  type = props.data.type
+  type = props.data.media_type
 }
 </script>
