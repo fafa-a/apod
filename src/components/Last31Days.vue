@@ -26,8 +26,6 @@ ref: startDate = last31Days
 ref: endDate = today
 ref: dataNasa = {}
 ref: loading = true
-console.log({ startDate })
-console.log({ endDate })
 onMounted(async () => {
   try {
     const { apod } = await picsOfLast31Days(last31Days)

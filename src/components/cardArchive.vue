@@ -12,9 +12,7 @@
       m="b-2 x-1"
     >
       <img
-        :src="
-          video ? 'https://i.ytimg.com/vi/' + videoURL + '/hqdefault.jpg' : Url
-        "
+        :src="thumbnail"
         alt="item.title"
         w="full"
         h="380px"
@@ -28,9 +26,10 @@
   </router-link>
 </template>
 <script name="cardArchive" setup>
-import { defineProps } from "@vue/runtime-core"
+import { defineProps, onMounted } from "@vue/runtime-core"
 import rightArrow from "./rightArrow.vue"
 import { formatDate } from "../utils/formatDate"
+import { fetchVimeo } from "../composable/useVimeo"
 
 const props = defineProps({
   item: {
@@ -45,9 +44,12 @@ const itemDate = formatDate(date)
 const slug = props.item.title.replaceAll(" ", "_")
 const video = props.item.media_type == "video"
 const image = props.item.media_type == "image"
+
 ref: Url = ""
 ref: hdURL = ""
 ref: videoURL = ""
+ref: videoHostname = ""
+ref: thumbnail = ""
 
 if (video && props.item.id) {
   videoURL = props.item.media.urlEmbed
@@ -62,6 +64,22 @@ if (image && props.item.id) {
 } else if (image) {
   Url = props.item.url
   hdURL = props.item.hdurl
+}
+
+const { hostname } = new URL(Url)
+videoHostname = hostname
+
+if (videoHostname === "www.youtube.com") {
+  thumbnail = "https://i.ytimg.com/vi/" + videoURL + "/hqdefault.jpg"
+}
+onMounted(async () => {
+  if (videoHostname === "player.vimeo.com") {
+    const { thumbnail_url } = await fetchVimeo(Url)
+    thumbnail = thumbnail_url
+  }
+})
+if (image) {
+  thumbnail = Url
 }
 </script>
 <style scoped>

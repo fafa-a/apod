@@ -5,7 +5,7 @@
         width="960"
         height="540"
         :src="url"
-        title="YouTube video player"
+        title="Video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
