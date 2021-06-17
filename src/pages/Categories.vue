@@ -1,6 +1,8 @@
 <template>
-  <div h="screen">
-    <h1>Categories</h1>
-  </div>
+  <section container="~" m="x-auto" min-h="screen">
+    <inputResearch />
+  </section>
 </template>
-<script name="Categories" setup></script>
+<script name="Categories" setup>
+import inputResearch from "../components/inputResearch.vue"
+</script>

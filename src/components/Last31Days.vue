@@ -10,7 +10,7 @@
   </div>
 </template>
 <script name="Last31Days" setup>
-import cardArchive from "./cardArchive.vue"
+import cardArchive from "./card31Days.vue"
 import loader from "./loader.vue"
 import { onMounted } from "@vue/runtime-dom"
 import { searchNasa } from "../composable/useNasa"
