@@ -1,8 +1,8 @@
 <template>
   <section container="~" m="x-auto" min-h="screen">
-    <inputResearch />
+    <ResearchSidebar />
   </section>
 </template>
 <script name="Categories" setup>
-import inputResearch from "../components/inputResearch.vue"
+import ResearchSidebar from "../components/ResearchSidebar.vue"
 </script>
