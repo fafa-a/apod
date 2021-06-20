@@ -24,8 +24,8 @@
 </template>
 
 <script name="inputResearch" setup>
-import { watchEffect } from "@vue/runtime-dom"
 import axios from "redaxios"
+import { watchEffect } from "@vue/runtime-dom"
 
 ref: query = ""
 ref: result = {}
