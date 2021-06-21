@@ -6,10 +6,15 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmit, onUpdated } from "@vue/runtime-dom"
+import {
+  defineProps,
+  defineEmit,
+  onUpdated,
+  watch,
+  watchEffect,
+} from "@vue/runtime-dom"
 
 ref: boxValue = []
-ref: isChecked = false
 
 const props = defineProps({
   value: {
@@ -24,9 +29,10 @@ const sendBoxValue = () => {
   emit("boxValueSend", boxValue)
 }
 
-onUpdated(() => {
-  isChecked = !isChecked
-  sendBoxValue()
+watchEffect(() => {
+  if (boxValue[0] === props.value) {
+    sendBoxValue()
+  }
 })
 </script>
 
