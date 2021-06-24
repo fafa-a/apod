@@ -10,12 +10,12 @@
   </div>
 </template>
 <script setup>
-import Card31Days from "./Card31Days.vue"
 import loader from "./loader.vue"
 import { onMounted } from "@vue/runtime-dom"
 import { searchNasa } from "../composable/useNasa"
 import { picsOfLast31Days } from "../composable/useSupabase"
 import { useSessionStorage } from "vue-composable"
+import Card31Days from "./Card31Days.vue"
 
 const [date, month, year] = new Date().toLocaleDateString("fr-FR").split("/")
 const today = `${year + "-" + month + "-" + date}`
