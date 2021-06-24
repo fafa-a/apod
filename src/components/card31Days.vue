@@ -25,9 +25,8 @@
     </div>
   </router-link>
 </template>
-<script setup>
+<script name="Card31Days" setup>
 import { defineProps, onMounted } from "@vue/runtime-core"
-import rightArrow from "./rightArrow.vue"
 import { formatDate } from "../utils/formatDate"
 import { fetchVimeo } from "../composable/useVimeo"
 
@@ -64,9 +63,11 @@ if (video && props.item.id) {
 if (image && props.item.id) {
   Url = props.item.media.url
   hdURL = props.item.media.hdurl
+  thumbnail = Url
 } else if (image) {
   Url = props.item.url
   hdURL = props.item.hdurl
+  thumbnail = Url
 }
 
 const { hostname } = new URL(Url)
@@ -81,9 +82,6 @@ onMounted(async () => {
     thumbnail = thumbnail_url
   }
 })
-if (image) {
-  thumbnail = Url
-}
 </script>
 <style scoped>
 div {

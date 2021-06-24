@@ -5,7 +5,7 @@
       <loader />
     </div>
     <div v-else grid="~ cols-1 md:cols-3 lg:cols-4 xl:cols-7" m="x-auto">
-      <!-- <Card31Days v-for="item of dataNasa" :key="item.index" :item="item" /> -->
+      <Card31Days v-for="item of dataNasa" :key="item.index" :item="item" />
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@ import { onMounted } from "@vue/runtime-dom"
 import { searchNasa } from "../composable/useNasa"
 import { picsOfLast31Days } from "../composable/useSupabase"
 import { useSessionStorage } from "vue-composable"
-// import Card31Days from "./Card31Days.vue"
+import Card31Days from "./Card31Days.vue"
 
 const [date, month, year] = new Date().toLocaleDateString("fr-FR").split("/")
 const today = `${year + "-" + month + "-" + date}`
