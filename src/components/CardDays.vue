@@ -25,7 +25,7 @@
     </div>
   </router-link>
 </template>
-<script name="Card31Days" setup>
+<script setup>
 import { defineProps, onMounted } from "@vue/runtime-core"
 import { formatDate } from "../utils/formatDate"
 import { fetchVimeo } from "../composable/useVimeo"
