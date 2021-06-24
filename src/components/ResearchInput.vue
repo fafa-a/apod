@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { defineEmit, defineProps, onUpdated } from "@vue/runtime-core"
+import { defineEmit, defineProps, watchEffect } from "@vue/runtime-core"
 
 ref: query = ""
 
@@ -27,9 +27,10 @@ const emit = defineEmit(["inputQuerySend"])
 const sendInputQuery = () => {
   emit("inputQuerySend", query)
 }
-
-onUpdated(() => {
-  sendInputQuery()
+watchEffect(() => {
+  if (query.length > 1) {
+    sendInputQuery()
+  }
 })
 </script>
 

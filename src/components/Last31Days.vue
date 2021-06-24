@@ -30,8 +30,10 @@ ref: loading = true
 onMounted(async () => {
   try {
     const { apod } = await picsOfLast31Days(last31Days)
-    dataNasa = apod
-    if (apod.length == 0 || apod[0].date !== today) {
+    // dataNasa = apod
+    dataNasa = {}
+    if (dataNasa.length == undefined) {
+      console.log(dataNasa)
       const { data } = await searchNasa(startDate, endDate)
       dataNasa = data.reverse()
     }

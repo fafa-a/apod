@@ -52,12 +52,15 @@ ref: videoHostname = ""
 ref: thumbnail = ""
 
 if (video && props.item.id) {
-  videoURL = props.item.media.urlEmbed
+  let itemURL = new URL(props.item.media.url)
+  videoURL = itemURL.pathname.slice(7)
   Url = props.item.media.url
 } else if (video) {
-  const itemURL = new URL(props.item.url)
+  let itemURL = new URL(props.item.url)
   videoURL = itemURL.pathname.slice(7)
+  Url = props.item.url
 }
+
 if (image && props.item.id) {
   Url = props.item.media.url
   hdURL = props.item.media.hdurl
