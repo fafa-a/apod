@@ -5,12 +5,12 @@
       <loader />
     </div>
     <div v-else grid="~ cols-1 md:cols-3 lg:cols-4 xl:cols-7" m="x-auto">
-      <cardArchive v-for="item of dataNasa" :key="item.index" :item="item" />
+      <Card31Days v-for="item of dataNasa" :key="item.index" :item="item" />
     </div>
   </div>
 </template>
-<script name="Last31Days" setup>
-import cardArchive from "./Card31Days.vue"
+<script setup>
+import Card31Days from "./Card31Days.vue"
 import loader from "./loader.vue"
 import { onMounted } from "@vue/runtime-dom"
 import { searchNasa } from "../composable/useNasa"
@@ -26,22 +26,40 @@ ref: startDate = last31Days
 ref: endDate = today
 ref: dataNasa = {}
 ref: loading = true
-
+ref: isStored = false
 onMounted(async () => {
+
   try {
     const { apod } = await picsOfLast31Days(last31Days)
-    // dataNasa = apod
-    dataNasa = {}
+    dataNasa = apod
+    // dataNasa = {}
     if (dataNasa.length == undefined) {
-      console.log(dataNasa)
-      const { data } = await searchNasa(startDate, endDate)
+      co1nst { data } = await searchNasa(startDate, endDate)
       dataNasa = data.reverse()
     }
-    useSessionStorage("data", dataNasa)
+    const { supported, storage } = useSessionStorage("data", dataNasa)
     loading = false
   } catch (error) {
     console.error(error)
   }
 })
+
+const fetchDataSources = async () => {
+  try {
+    const { apod } = await picsOfLast31Days(last31Days)
+    dataNasa = apod
+    // dataNasa = {}
+    if (dataNasa.length == undefined) {
+      const { data } = await searchNasa(startDate, endDate)
+      dataNasa = data.reverse()
+    }
+    const { supported, storage } = useSessionStorage("data", dataNasa)
+    console.log(storage)
+    loading = false
+    isStored = true
+  } catch (error) {
+    console.error(error)
+  }
+}
 </script>
 <style></style>
