@@ -28,13 +28,11 @@ ref: dataNasa = {}
 ref: loading = true
 ref: isStored = false
 onMounted(async () => {
-
   try {
     const { apod } = await picsOfLast31Days(last31Days)
     dataNasa = apod
-    // dataNasa = {}
     if (dataNasa.length == undefined) {
-      co1nst { data } = await searchNasa(startDate, endDate)
+      const { data } = await searchNasa(startDate, endDate)
       dataNasa = data.reverse()
     }
     const { supported, storage } = useSessionStorage("data", dataNasa)
