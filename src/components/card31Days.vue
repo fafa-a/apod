@@ -25,7 +25,7 @@
     </div>
   </router-link>
 </template>
-<script name="cardArchive" setup>
+<script setup>
 import { defineProps, onMounted } from "@vue/runtime-core"
 import rightArrow from "./rightArrow.vue"
 import { formatDate } from "../utils/formatDate"
