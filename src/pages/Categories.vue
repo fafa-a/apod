@@ -3,14 +3,19 @@
     <div w="33vw" flex="~ col" m="r-2">
       <ResearchSidebar @researchQuery="handleResearchQuery" />
     </div>
-    <div w="77vw" bg="red-500">
-      {{ results }}
+    <div w="77vw" flex="~ row wrap">
+      <CategorieResearchResult
+        v-for="(item, index) in results"
+        :key="index"
+        :data="item"
+      />
     </div>
   </section>
 </template>
 <script name="Categories" setup>
 import axios from "redaxios"
 import ResearchSidebar from "../components/ResearchSidebar.vue"
+import CategorieResearchResult from "../components/CategorieResearchResult.vue"
 
 ref: results = {}
 ref: query = ""
@@ -29,6 +34,7 @@ const search = async () => {
     import.meta.env.VITE_NASA_RESEARCH_BASE_URL + `/search?q=${query}`
   )
   const { data } = await res
-  results = data
+
+  results = data.collection.items
 }
 </script>

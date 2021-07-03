@@ -7,6 +7,7 @@
     <ThePictureDescription :data="dataApod[0]" />
   </article>
 </template>
+
 <script name="TheSection" setup>
 import ThePicture from "./ThePicture.vue"
 import ThePictureDescription from "./ThePictureDescription.vue"
