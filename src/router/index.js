@@ -1,5 +1,5 @@
 import Home from "../pages/Home.vue"
-import Categories from "../pages/Categories.vue"
+import Search from "../pages/Search.vue"
 import Last31Days from "../pages/Last31DaysPage.vue"
 import MenuMobile from "../pages/MenuMobile.vue"
 import TheDay from "../pages/DayPage.vue"
@@ -14,9 +14,9 @@ const routes = [
     alias: "/home",
   },
   {
-    path: "/categories",
-    name: "Categories",
-    component: Categories,
+    path: "/search",
+    name: "Search",
+    component: Search,
   },
   {
     path: "/last-31-days",

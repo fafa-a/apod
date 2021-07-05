@@ -1,21 +1,16 @@
 <template>
-  <div v-if="type === 'image'" w="1/3">
-    <CategoriePicture :link="link" />
-  </div>
-  <div v-if="type === 'video'" w="1/3">
-    <CategorieVideo :link="link" />
-  </div>
-  <div v-if="type === 'audio'" w="1/3">
-    <CategorieAudio :link="link" />
+  <div>
+    <SearchThumbnail />
   </div>
 </template>
 
 <script setup>
 import { defineProps, onMounted, provide } from "@vue/runtime-dom"
 import axios from "redaxios"
-import CategoriePicture from "./CategoriePicture.vue"
-import CategorieVideo from "./CategorieVideo.vue"
-import CategorieAudio from "./CategorieAudio.vue"
+import SearchThumbnail from "./SearchThumbnail.vue"
+import Picture from "./Picture.vue"
+import Video from "./Video.vue"
+import Audio from "./Audio.vue"
 
 ref: axiosData = {}
 ref: link = ""

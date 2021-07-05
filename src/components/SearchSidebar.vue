@@ -1,20 +1,20 @@
 <template>
-  <ResearchInput @inputQuerySend="handleQuery" inputType="text" />
+  <SearchInput @inputQuerySend="handleQuery" inputType="text" />
   <span flex="~ row" justify="between">
-    <ResearchCheckbox
+    <SearchCheckbox
       @boxValueSend="handleCheckbox"
       v-for="(checkbox, index) in checkboxes"
       :value="checkbox"
       :key="index"
     />
   </span>
-  <ResearchButton @isClicked="handlebutton" buttonText="search" />
+  <SearchButton @isClicked="handlebutton" buttonText="search" />
 </template>
 
 <script setup>
-import ResearchCheckbox from "./ResearchCheckbox.vue"
-import ResearchInput from "./ResearchInput.vue"
-import ResearchButton from "./ResearchButton.vue"
+import SearchCheckbox from "./SearchCheckbox.vue"
+import SearchInput from "./SearchInput.vue"
+import SearchButton from "./SearchButton.vue"
 import { defineEmit, onUpdated } from "@vue/runtime-core"
 
 ref: media = []
@@ -31,13 +31,13 @@ const handleQuery = (args) => {
 }
 const handlebutton = () => {
   isClicked = true
-  sendResearchQuery()
+  sendSearchQuery()
   isClicked = false
 }
-const emit = defineEmit(["researchQuery"])
+const emit = defineEmit(["SearchQuery"])
 
-const sendResearchQuery = () => {
-  emit("researchQuery", { query, media, isClicked })
+const sendSearchQuery = () => {
+  emit("SearchQuery", { query, media, isClicked })
 }
 </script>
 

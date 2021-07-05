@@ -1,12 +1,12 @@
 <template>
   <a :href="link" target="_blank" rel="noopener">
-    <CategorieThumbnail />
+    <SearchThumbnail />
   </a>
 </template>
 
 <script setup>
 import { defineProps } from "@vue/runtime-dom"
-import CategorieThumbnail from "./CategorieThumbnail.vue"
+import SearchThumbnail from "./SearchThumbnail.vue"
 
 defineProps({
   link: {

@@ -10,13 +10,13 @@
       >last 31 days</router-link
     >
     <router-link
-      :to="{ path: '/categories' }"
+      :to="{ path: '/search' }"
       border="solid 1 dark-50"
       class="fill"
       w="200px"
       h="50px"
     >
-      <span class="on-fill" p="y-auto"> categories</span>
+      <span class="on-fill" p="y-auto">search</span>
     </router-link>
   </nav>
 </template>

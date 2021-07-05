@@ -1,5 +1,5 @@
 <template>
-  <CategorieThumbnail />
+  <SearchThumbnail />
   <iframe
     width="960"
     height="540"
@@ -13,7 +13,7 @@
 
 <script setup>
 import { defineProps } from "@vue/runtime-dom"
-import CategorieThumbnail from "./CategorieThumbnail.vue"
+import SearchThumbnail from "./SearchThumbnail.vue"
 
 defineProps({
   link: {

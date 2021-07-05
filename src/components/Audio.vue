@@ -1,11 +1,11 @@
 <template>
-  <CategorieThumbnail />
+  <SearchThumbnail />
   <audio controls :src="link"></audio>
 </template>
 
 <script setup>
 import { defineProps } from "@vue/runtime-dom"
-import CategorieThumbnail from "./CategorieThumbnail.vue"
+import SearchThumbnail from "./SearchThumbnail.vue"
 
 defineProps({
   link: {
