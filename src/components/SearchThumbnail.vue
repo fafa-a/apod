@@ -1,7 +1,7 @@
 <template>
   <div w="255px" h="380px" m="b-2 x-0.5">
     <img
-      :src="urlThumbnail"
+      :src="type === 'audio' ? 'src/assets/icon/volume-2.svg' : urlThumbnail"
       :alt="data.data[0].title"
       w="full"
       h="340px"
@@ -17,7 +17,14 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted } from "@vue/runtime-dom"
+import {
+  defineProps,
+  onMounted,
+  onUpdated,
+  toRefs,
+  watch,
+  watchEffect,
+} from "@vue/runtime-dom"
 import axios from "redaxios"
 
 ref: type = ""
@@ -46,6 +53,13 @@ onMounted(async () => {
   findThumbnail()
   type = props.data.data[0].media_type
 })
+
+// watchEffect(() => {
+//   console.log(urlThumbnail)
+// })
+// watch(urlThumbnail, (value, prevValue) => {
+//   props.data = value
+// })
 </script>
 
 <style lang="scss" scoped></style>

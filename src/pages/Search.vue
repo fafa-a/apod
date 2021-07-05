@@ -5,8 +5,8 @@
     </div>
     <div w="75vw" flex="~ row wrap">
       <SearchThumbnail
-        v-for="(item, index) in results"
-        :key="index"
+        v-for="item in results"
+        :key="item.data[0].nasa_id"
         :data="item"
       />
 
@@ -17,22 +17,32 @@
         flex="~ row"
         justify="center"
       >
-        <img
-          src="../assets/icon/skip-back.svg"
-          alt=""
-          @click="fetchLink(previousPage)"
-        />
-        <img
-          src="../assets/icon/skip-forward.svg"
-          alt=""
-          @click="fetchLink(nextPage)"
-        />
+        <button>
+          <img
+            src="../assets/icon/skip-back.svg"
+            alt=""
+            @click="search(previousPage)"
+          />
+        </button>
+        <button>
+          <img
+            src="../assets/icon/skip-forward.svg"
+            alt=""
+            @click="search(nextPage)"
+          />
+        </button>
       </div>
     </div>
   </section>
 </template>
 <script name="Categories" setup>
-import { onMounted } from "@vue/runtime-dom"
+import {
+  computed,
+  onMounted,
+  onUpdated,
+  watch,
+  watchEffect,
+} from "@vue/runtime-dom"
 import axios from "redaxios"
 import SearchSidebar from "../components/SearchSidebar.vue"
 import SearchThumbnail from "../components/SearchThumbnail.vue"
@@ -51,24 +61,36 @@ const handleSearchQuery = (args) => {
   query = args.query
   media.push(args.media)
   isClicked = args.isClicked
-  search()
+  search(import.meta.env.VITE_NASA_RESEARCH_BASE_URL + `/search?q=${query}`)
 }
 
-const search = async () => {
-  const res = axios.get(
-    import.meta.env.VITE_NASA_RESEARCH_BASE_URL + `/search?q=${query}`
-  )
+const search = async (url) => {
+  const res = axios.get(url)
   const { data } = await res
   axiosData = data
   results = data.collection.items
 }
 
 const refreshFetchUrl = () => {
-  nextPage = axiosData.collection.links[0].href
-  previousPage = initialQueryUrl
+  if (axiosData.collection.links.length > 1) {
+    previousPage = axiosData.collection.links[0].href
+    nextPage = axiosData.collection.links[1].href
+  } else {
+    previousPage = initialQueryUrl
+    nextPage = axiosData.collection.links[0].href
+  }
 }
-onMounted(async () => {
-  await handleSearchQuery()
+
+onUpdated(() => {
   refreshFetchUrl()
 })
+
+// watch(
+//   () => results,
+//   (results, prevResults) => {
+
+//     console.log({ results })
+//     console.log({ prevResults })
+//   }
+// )
 </script>
