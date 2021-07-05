@@ -3,6 +3,7 @@ import Search from "../pages/Search.vue"
 import Last31Days from "../pages/Last31DaysPage.vue"
 import MenuMobile from "../pages/MenuMobile.vue"
 import TheDay from "../pages/DayPage.vue"
+import SearchDetails from "../pages/SearchDetails.vue"
 
 import { createRouter, createWebHistory } from "vue-router"
 
@@ -19,6 +20,11 @@ const routes = [
     component: Search,
   },
   {
+    path: "/search-details/:slug",
+    name: "Search-details",
+    component: SearchDetails,
+  },
+  {
     path: "/last-31-days",
     name: "Last31Days",
     component: Last31Days,
@@ -27,9 +33,9 @@ const routes = [
     path: "/the-day/:id",
     name: "TheDay",
     component: TheDay,
-    props(route) {
-      return { search: route.query.search }
-    },
+    // props(route) {
+    //   return { search: route.query.search }
+    // },
   },
   { path: "/menu", name: "Menu", component: MenuMobile },
 ]
