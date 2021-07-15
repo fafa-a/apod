@@ -76,6 +76,10 @@ videoHostname = hostname
 if (videoHostname === "www.youtube.com") {
   thumbnail = "https://i.ytimg.com/vi/" + videoURL + "/hqdefault.jpg"
 }
+if (Url === "https://solarsystem.nasa.gov/gltf_embed/2381")
+  thumbnail =
+    "https://solarsystem.nasa.gov/system/resources/gltf_poster_files/2381_poster_iapetus.jpg"
+
 onMounted(async () => {
   if (videoHostname === "player.vimeo.com") {
     const { thumbnail_url } = await fetchVimeo(Url)

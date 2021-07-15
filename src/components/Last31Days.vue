@@ -52,7 +52,7 @@ const fetchDataSources = async () => {
       dataNasa = data.reverse()
     }
     const { supported, storage } = useSessionStorage("data", dataNasa)
-    console.log(storage)
+    console.log({ storage })
     loading = false
     isStored = true
   } catch (error) {
