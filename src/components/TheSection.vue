@@ -9,7 +9,7 @@
 </template>
 
 <script name="TheSection" setup>
-import Loader from "./Loader.vue"
+// import Loader from "./Loader.vue"
 import ThePictureDescription from "./ThePictureDescription.vue"
 import ThePicture from "./ThePicture.vue"
 import { onMounted } from "@vue/runtime-core"
