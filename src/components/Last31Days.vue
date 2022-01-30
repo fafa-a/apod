@@ -17,9 +17,13 @@ import { picsOfLast31Days } from "../composable/useSupabase"
 import { useSessionStorage } from "vue-composable"
 import CardDays from "./CardDays.vue"
 
-const [date, month, year] = new Date().toLocaleDateString("fr-FR").split("/")
+let [date, month, year] = new Date().toLocaleDateString("fr-FR").split("/")
 const today = `${year + "-" + month + "-" + date}`
-const lastMonth = month - 1
+let lastMonth = month - 1
+if (lastMonth === 0) {
+  lastMonth = 12
+  year = year - 1
+}
 const last31Days = `${year + "-" + lastMonth + "-" + date}`
 
 ref: startDate = last31Days

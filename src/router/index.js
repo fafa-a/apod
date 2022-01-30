@@ -23,6 +23,7 @@ const routes = [
     path: "/search-details/:slug",
     name: "Search-details",
     component: SearchDetails,
+    props: true,
   },
   {
     path: "/last-31-days",
