@@ -82,7 +82,7 @@
     </svg>
   </div>
 </template>
-<script name="loader"></script>
+<script name="Loader"></script>
 <style scoped>
 a,
 a:visited {
