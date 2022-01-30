@@ -5,8 +5,8 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 const [date, month, year] = new Date().toLocaleDateString("fr-FR").split("/")
-const today = `${year + "-" + month + "-" + date}`
-
+const today = `${year}-${month}-${date}`
+console.log({ today })
 const picsOftheDay = async () => {
   let { data: apod, error } = await supabase
     .from("apod")
