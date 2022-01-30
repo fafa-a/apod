@@ -2,20 +2,21 @@
   <h1 font="display" text="h3" m="x-1rem md:x-2rem lg:x-3rem">Last 31 days</h1>
   <div container="~" flex="~ row" m="x-auto t-8">
     <div v-if="loading" m="x-auto">
-      <loader />
+      <Loader />
     </div>
     <div v-else grid="~ cols-1 md:cols-3 lg:cols-4 xl:cols-7" m="x-auto">
       <CardDays v-for="item of dataNasa" :key="item.index" :item="item" />
     </div>
   </div>
 </template>
+
 <script setup>
-import loader from "./loader.vue"
+import Loader from "./Loader.vue"
+import CardDays from "./CardDays.vue"
 import { onMounted } from "@vue/runtime-dom"
 import { searchNasa } from "../composable/useNasa"
 import { picsOfLast31Days } from "../composable/useSupabase"
 import { useSessionStorage } from "vue-composable"
-import CardDays from "./CardDays.vue"
 
 let [date, month, year] = new Date().toLocaleDateString("fr-FR").split("/")
 const today = `${year + "-" + month + "-" + date}`

@@ -9,9 +9,8 @@
 </template>
 
 <script name="TheSection" setup>
-import ThePicture from "./ThePicture.vue"
 import ThePictureDescription from "./ThePictureDescription.vue"
-import loader from "./loader.vue"
+import ThePicture from "./ThePicture.vue"
 import { onMounted } from "@vue/runtime-core"
 import { picsOftheDay } from "../composable/useSupabase"
 import { fetchNasa } from "../composable/useNasa"
