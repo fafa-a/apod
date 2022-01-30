@@ -4,7 +4,11 @@ const supabaseUrl = "https://pkonpcjzjjefublfunli.supabase.co"
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-const [date, month, year] = new Date().toLocaleDateString("fr-FR").split("/")
+let [date, month, year] = new Date().toLocaleDateString("fr-FR").split("/")
+const [hour] = new Date().toLocaleTimeString("fr-FR").split("/")
+if (hour < "04:25:00") {
+  date -= 1
+}
 const today = `${year}-${month}-${date}`
 
 const picsOftheDay = async () => {
