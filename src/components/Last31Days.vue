@@ -2,7 +2,7 @@
   <h1 font="display" text="h3" m="x-1rem md:x-2rem lg:x-3rem">Last 31 days</h1>
   <div container="~" flex="~ row" m="x-auto t-8">
     <div v-if="loading" m="x-auto">
-      <Loader />
+      <loader />
     </div>
     <div v-else grid="~ cols-1 md:cols-3 lg:cols-4 xl:cols-7" m="x-auto">
       <CardDays v-for="item of dataNasa" :key="item.index" :item="item" />
@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import Loader from "./Loader.vue"
+import Loader from "./loader.vue"
 import CardDays from "./CardDays.vue"
 import { onMounted } from "@vue/runtime-dom"
 import { searchNasa } from "../composable/useNasa"
