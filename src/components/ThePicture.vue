@@ -26,6 +26,7 @@
 </template>
 <script name="ThePicture" setup>
 import { useRoute } from "vue-router"
+import { onMounted } from "@vue/runtime-core"
 
 const route = useRoute()
 let hdurl = $ref("")
@@ -54,4 +55,8 @@ if (route.name === "the-day") {
   url = props.data.url
   type = props.data.media_type
 }
+onMounted(() => {
+  hdurl = hdurl.slice(0, 45) + "f_auto,q_auto,w_auto/" + hdurl.slice(45)
+  url = url.slice(0, 45) + "f_auto,q_auto,w_auto/" + url.slice(45)
+})
 </script>

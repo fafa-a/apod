@@ -7,4 +7,5 @@ import "virtual:windi.css"
 
 const nasaApp = createApp(App)
 nasaApp.use(router)
+
 nasaApp.mount("#app")

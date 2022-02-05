@@ -9,7 +9,6 @@
   "dependencies": {
     "@vue/runtime-core": "^3.2.29",
     "cloudinary": "^1.28.1",
-    "cloudinary-vue": "^1.2.3",
     "dotenv": "^16.0.0",
     "redaxios": "^0.4.1",
     "vite-plugin-windicss": "^1.6.3",
@@ -21,7 +20,7 @@
     "@supabase/supabase-js": "^1.30.0",
     "@vitejs/plugin-vue": "^2.1.0",
     "@vue/compiler-sfc": "^3.2.29",
-    "vite": "^2.7.13", 
+    "vite": "^2.7.13",
     "windicss": "^3.4.3"
   }
 }

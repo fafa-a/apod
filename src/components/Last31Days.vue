@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-// import Loader from "./Loader.vue"
+import Loader from "./Loader.vue"
 import CardDays from "./CardDays.vue"
 import { onMounted } from "@vue/runtime-dom"
 import { searchNasa } from "../composable/useNasa"
