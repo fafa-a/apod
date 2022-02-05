@@ -30,7 +30,7 @@
 <script setup>
 import {
   computed,
-  defineEmit,
+  defineEmits,
   defineProps,
   onMounted,
   onUpdated,
@@ -38,12 +38,12 @@ import {
 } from "@vue/runtime-dom"
 import axios from "redaxios"
 
-ref: type = ""
-ref: axiosRes = {}
-ref: urlArray = {}
-ref: urlThumbnail = ""
-ref: urlOrig = ""
-ref: thumbnailData = {}
+let type = $ref("")
+let axiosRes = $ref({})
+let urlArray = $ref({})
+let urlThumbnail = $ref("")
+let urlOrig = $ref("")
+let thumbnailData = $ref({})
 
 const props = defineProps({
   data: {
@@ -57,7 +57,7 @@ const props = defineProps({
     type: Number,
   },
 })
-const emit = defineEmit(["sendUrlOrig", "sendIndex"])
+const emit = defineEmits(["sendUrlOrig", "sendIndex"])
 
 const slug = props.data.data[0].title.replaceAll(" ", "_")
 

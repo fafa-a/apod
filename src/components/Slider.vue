@@ -25,8 +25,8 @@
 import { computed, onMounted } from "@vue/runtime-dom"
 import Slide from "./Slide.vue"
 
-ref: data = []
-ref: slideIndex = null
+let data = $ref([])
+let slideIndex = $ref(null)
 
 const sessionData = sessionStorage.getItem("dataSlide")
 const obj = JSON.parse(sessionData)

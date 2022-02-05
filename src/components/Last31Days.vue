@@ -27,11 +27,11 @@ if (lastMonth === 0) {
 }
 const last31Days = `${year + "-" + lastMonth + "-" + date}`
 
-ref: startDate = last31Days
-ref: endDate = today
-ref: dataNasa = {}
-ref: loading = true
-ref: isStored = false
+let startDate = $ref(last31Days)
+let endDate = $ref(today)
+let dataNasa = $ref({})
+let loading = $ref(true)
+let isStored = $ref(false)
 onMounted(async () => {
   try {
     const { apod } = await picsOfLast31Days(last31Days)

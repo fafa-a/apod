@@ -6,11 +6,11 @@
 </template>
 
 <script name="ResultDetails" setup>
-import { defineProps, onMounted, onUpdated } from "@vue/runtime-dom"
+import { onMounted, onUpdated } from "@vue/runtime-dom"
 import { useRoute } from "vue-router"
 
-ref: imgSrc = ""
-ref: description = ""
+let imgSrc = $ref("")
+let description = $ref("")
 const props = defineProps({
   data: {
     type: Object,

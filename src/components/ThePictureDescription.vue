@@ -51,14 +51,13 @@
   </div>
 </template>
 <script name="ThePictureDescription" setup>
-import { defineProps } from "vue"
 import { useRoute } from "vue-router"
 import { formatDate } from "../utils/formatDate"
 
 const route = useRoute()
-ref: title = ""
-ref: explanation = ""
-ref: copyright = ""
+let title = $ref("")
+let explanation = $ref("")
+let copyright = $ref("")
 
 const props = defineProps({
   data: {

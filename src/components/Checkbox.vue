@@ -8,11 +8,11 @@
 </template>
 
 <script setup>
-import { defineEmit, onUpdated } from "@vue/runtime-core"
+import { defineEmits, onUpdated } from "@vue/runtime-core"
 
-ref: mediaType = []
+let mediaType = $ref([])
 
-const emit = defineEmit(["boxChecked"])
+const emit = defineEmits(["boxChecked"])
 
 const sendBoxChecked = (args) => {
   const media = args.join(",")

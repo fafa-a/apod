@@ -11,9 +11,9 @@
 </template>
 
 <script setup>
-import { defineEmit, defineProps, watchEffect } from "@vue/runtime-core"
+import { defineEmits, defineProps, watchEffect } from "@vue/runtime-core"
 
-ref: query = ""
+let query = $ref("")
 
 defineProps({
   inputType: {
@@ -22,7 +22,7 @@ defineProps({
   },
 })
 
-const emit = defineEmit(["inputQuerySend"])
+const emit = defineEmits(["inputQuerySend"])
 
 const sendInputQuery = () => {
   emit("inputQuerySend", query)

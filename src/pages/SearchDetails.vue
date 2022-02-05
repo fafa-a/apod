@@ -9,9 +9,9 @@ import Slider from "../components/Slider.vue"
 import axios from "redaxios"
 import { inject, onMounted, onUpdated, watchEffect } from "@vue/runtime-dom"
 
-ref: urls = []
-ref: urlFinal = []
-ref: xdata = {}
+let urls = $ref([])
+let urlFinal = $ref([])
+let xdata = $ref({})
 
 defineProps({
   dataSlider: {

@@ -15,9 +15,8 @@ import ThePicture from "./ThePicture.vue"
 import { onMounted } from "@vue/runtime-core"
 import { picsOftheDay } from "../composable/useSupabase"
 import { fetchNasa } from "../composable/useNasa"
-
-ref: loading = true
-ref: dataApod = {}
+let loading = $ref(true)
+let dataApod = $ref({})
 
 onMounted(async () => {
   try {

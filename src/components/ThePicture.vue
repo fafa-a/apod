@@ -6,7 +6,6 @@
         height="540"
         :src="url"
         title="Video player"
-        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
@@ -26,14 +25,13 @@
   </picture>
 </template>
 <script name="ThePicture" setup>
-import { defineProps } from "@vue/runtime-core"
 import { useRoute } from "vue-router"
 
 const route = useRoute()
-ref: hdurl = ""
-ref: url = ""
-ref: title = ""
-ref: type = ""
+let hdurl = $ref("")
+let url = $ref("")
+let title = $ref("")
+let type = $ref("")
 
 const props = defineProps({
   data: {

@@ -10,8 +10,8 @@ import ThePicture from "./ThePicture.vue"
 import ThePictureDescription from "./ThePictureDescription.vue"
 import { useSessionStorage } from "vue-composable"
 import { computed, watchEffect } from "@vue/runtime-dom"
-ref: index = 0
-ref: data = {}
+let index = $ref(0)
+let data = $ref({})
 const { storage } = useSessionStorage("data")
 
 const route = useRoute()

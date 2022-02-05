@@ -27,15 +27,15 @@
 import axios from "redaxios"
 import { watchEffect } from "@vue/runtime-dom"
 
-ref: query = ""
-ref: result = {}
-ref: keywords = []
-ref: key = []
-ref: tag = []
+let query = $ref("")
+let result = $ref({})
+let keywords = $ref([])
+let key = $ref([])
+let tag = $ref([])
 
-ref: start = 1920
-ref: end = 2021
-ref: slugs = ""
+let start = $ref(1920)
+let end = $ref(2022)
+let slugs = $ref("")
 
 const insertSlug = () => {
   if (media) {
@@ -44,7 +44,7 @@ const insertSlug = () => {
 }
 
 const search = async () => {
-  media = mediaType.join(",")
+  let media = mediaType.join(",")
   insertSlug()
   const res = axios.get(
     import.meta.env.VITE_NASA_RESEARCH_BASE_URL + `/search?q=${query}+${slugs}`
@@ -68,7 +68,7 @@ const search = async () => {
 }
 
 if (mediaType.length > 0) {
-  for (item of mediaType) {
+  for (const item of mediaType) {
     console.log(item)
   }
 }

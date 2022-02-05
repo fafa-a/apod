@@ -1,3 +1,4 @@
+import { defineEmits } from '@vue/runtime-core';
 <template>
   <span>
     <input type="checkbox" :id="value" :value="value" v-model="boxValue" />
@@ -8,13 +9,13 @@
 <script setup>
 import {
   defineProps,
-  defineEmit,
+  defineEmits,
   onUpdated,
   watch,
   watchEffect,
 } from "@vue/runtime-dom"
 
-ref: boxValue = []
+let boxValue = $ref([])
 
 const props = defineProps({
   value: {
@@ -23,7 +24,7 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmit(["boxValueSend"])
+const emit = defineEmits(["boxValueSend"])
 
 const sendBoxValue = () => {
   emit("boxValueSend", boxValue)

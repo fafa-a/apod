@@ -7,8 +7,6 @@
 </template>
 
 <script name="TheTitle" setup>
-import { defineProps } from "@vue/runtime-core"
-
 defineProps({
   title: {
     type: String,

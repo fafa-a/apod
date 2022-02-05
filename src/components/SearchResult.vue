@@ -5,16 +5,16 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted, provide } from "@vue/runtime-dom"
+import { onMounted, provide } from "@vue/runtime-dom"
 import axios from "redaxios"
 import SearchThumbnail from "./SearchThumbnail.vue"
 import Picture from "./Picture.vue"
 import Video from "./Video.vue"
 import Audio from "./Audio.vue"
 
-ref: axiosData = {}
-ref: link = ""
-ref: type = ""
+let axiosData = $ref({})
+let link = $ref("")
+let type = $ref("")
 
 const props = defineProps({
   data: {

@@ -26,7 +26,7 @@
   </router-link>
 </template>
 <script setup>
-import { defineProps, onMounted } from "@vue/runtime-core"
+import { onMounted } from "@vue/runtime-core"
 import { formatDate } from "../utils/formatDate"
 import { fetchVimeo } from "../composable/useVimeo"
 
@@ -44,11 +44,11 @@ const slug = props.item.title.replaceAll(" ", "_")
 const video = props.item.media_type == "video"
 const image = props.item.media_type == "image"
 
-ref: Url = ""
-ref: hdURL = ""
-ref: videoURL = ""
-ref: videoHostname = ""
-ref: thumbnail = ""
+let Url = $ref("")
+let hdURL = $ref("")
+let videoURL = $ref("")
+let videoHostname = $ref("")
+let thumbnail = $ref("")
 
 if (video && props.item.id) {
   let itemURL = new URL(props.item.media.url)

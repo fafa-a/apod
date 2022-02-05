@@ -6,15 +6,15 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmit, onMounted } from "@vue/runtime-dom"
+import { defineEmits, onMounted } from "@vue/runtime-dom"
 import { useRoute } from "vue-router"
 
-ref: slideIndex = null
+let slideIndex = $ref(null)
 
 const route = useRoute()
 const { index } = route.query
 
-const emit = defineEmit(["sendSlideIndex"])
+const emit = defineEmits(["sendSlideIndex"])
 
 const props = defineProps({
   item: {

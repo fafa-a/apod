@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { defineEmit, defineProps } from "@vue/runtime-core"
+import { defineEmits, defineProps } from "@vue/runtime-core"
 
 defineProps({
   buttonText: {
@@ -20,7 +20,7 @@ defineProps({
     required: true,
   },
 })
-const emit = defineEmit(["isClicked"])
+const emit = defineEmits(["isClicked"])
 const buttonClicked = () => {
   emit("isClicked")
 }

@@ -58,18 +58,18 @@ import { useSessionStorage } from "vue-composable"
 import SearchSidebar from "../components/SearchSidebar.vue"
 import SearchThumbnail from "../components/SearchThumbnail.vue"
 
-ref: results = {}
-ref: query = ""
-ref: media = []
-ref: isClicked = Boolean
-ref: initialQueryUrl =
+let results = $ref({})
+let query = $ref("")
+let media = $ref([])
+let isClicked = $ref(Boolean)
+let initialQueryUrl =
   import.meta.env.VITE_NASA_RESEARCH_BASE_URL + `/search?q=${query}`
-ref: previousPage = ""
-ref: nextPage = ""
-ref: axiosData = {}
-ref: items = []
-ref: dataSlider = []
-ref: thumbnailIndex = null
+let previousPage = $ref("")
+let nextPage = $ref("")
+let axiosData = $ref({})
+let items = $ref([])
+let dataSlider = $ref([])
+let thumbnailIndex = $ref(null)
 
 const handleSearchQuery = (args) => {
   query = args.query

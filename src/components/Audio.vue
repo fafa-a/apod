@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import { defineProps } from "@vue/runtime-dom"
+
 import SearchThumbnail from "./SearchThumbnail.vue"
 
 defineProps({
