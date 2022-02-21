@@ -7,20 +7,20 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@vue/runtime-core": "^3.2.29",
+    "@vue/runtime-core": "^3.2.31",
     "cloudinary": "^1.28.1",
     "dotenv": "^16.0.0",
     "redaxios": "^0.4.1",
-    "vite-plugin-windicss": "^1.6.3",
-    "vue": "^3.1.4",
+    "vite-plugin-windicss": "^1.7.1",
+    "vue": "^3.2.31",
     "vue-composable": "1.0.0-beta.24",
-    "vue-router": "^4.0.10"
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
-    "@supabase/supabase-js": "^1.30.0",
-    "@vitejs/plugin-vue": "^2.1.0",
-    "@vue/compiler-sfc": "^3.2.29",
-    "vite": "^2.7.13",
+    "@supabase/supabase-js": "^1.30.4",
+    "@vitejs/plugin-vue": "^2.2.2",
+    "@vue/compiler-sfc": "^3.2.31",
+    "vite": "^2.8.4",
     "windicss": "^3.4.3"
   }
 }
