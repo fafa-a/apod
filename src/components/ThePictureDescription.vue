@@ -54,10 +54,12 @@
 import { useRoute } from "vue-router"
 import { formatDate } from "../utils/formatDate"
 
+const { title:titleProps, explanation:explanationProps, copyright:copyrightProps ,date} = props.data.value
+
 const route = useRoute()
-let title = $ref("")
-let explanation = $ref("")
-let copyright = $ref("")
+let title = $ref(titleProps)
+let explanation = $ref(explanationProps)
+let copyright = $ref(copyrightProps)
 
 const props = defineProps({
   data: {
@@ -66,11 +68,6 @@ const props = defineProps({
   },
 })
 
-title = props.data.title
-explanation = props.data.explanation
-copyright = props.data.copyright
-
-const { date } = props.data
 const today = formatDate(date)
 </script>
 <style scoped>

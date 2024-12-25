@@ -47,17 +47,17 @@ const props = defineProps({
 })
 
 if (route.name === "the-day") {
-    hdurl = props.data.hdurl
-    url = props.data.url
-    title = props.data.title
-    type = props.data.media_type
+    hdurl = props.data.value.hdurl
+    url = props.data.value.url
+    title = props.data.value.title
+    type = props.data.value.media_type
 } else if (props.data.id) {
-    hdurl = props.data.media.hdurl
-    url = props.data.media.url
-    type = props.data.media_type
+    hdurl = props.data.value.media.hdurl
+    url = props.data.value.media.url
+    type = props.data.value.media_type
 } else {
-    hdurl = props.data.hdurl
-    url = props.data.url
-    type = props.data.media_type
+    hdurl = props.data.value.hdurl
+    url = props.data.value.url
+    type = props.data.value.media_type
 }
 </script>

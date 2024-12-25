@@ -8,8 +8,8 @@
         justify="center"
         align="lg:items-center"
     >
-        <ThePicture :data="dataApod[0]" />
-        <ThePictureDescription :data="dataApod[0]" />
+        <ThePicture :data="dataApod" />
+        <ThePictureDescription :data="dataApod" />
     </article>
 </template>
 
@@ -25,12 +25,12 @@ let dataApod = $ref({})
 
 onMounted(async () => {
     try {
-        const { apod } = await picsOftheDay()
-        dataApod = apod
-        if (dataApod.length == 0) {
-            const data = await fetchNasa()
-            dataApod.push(data)
-        }
+        //const { apod } = await picsOftheDay()
+        //dataApod = apod
+        //if (!dataApod) {
+        const data = await fetchNasa()
+        dataApod.value =  data
+        //}
         loading = false
     } catch (error) {
         console.error(error)
